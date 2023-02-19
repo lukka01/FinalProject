@@ -57,7 +57,7 @@ loadProducts();
 
 function loadProducts() {
   for (let i = 1; i <= 10; i++) {
-    const url = `https://fakestoreapi.com/products/${pageNumber}`;
+    const url = https://fakestoreapi.com/products/${pageNumber};
     fetch(url)
       .then(response => response.json())
       .then(data => {
@@ -72,6 +72,9 @@ function loadProducts() {
           <p>Price: ${data.price}</p>
         `;
         mainSection.appendChild(card);
+      })
+      .catch(error => {
+        console.log(Error fetching product data: ${error});
       });
   }
 }
